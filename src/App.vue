@@ -1,32 +1,49 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="service_demo">
+    <el-container class="home-container">
+      <el-aside width="250px">
+        <el-menu background-color="transparent"
+                 text-color="#ffffff"
+                 active-text-color="#ffd04b">
+          <!-- 一级菜单 -->
+          <el-submenu index="1">
+            <!-- 一级菜单模板 -->
+            <template slot="title">
+              <!-- 图标 -->
+              <i class="el-icon-location"></i>
+              <!-- 文本 -->
+              <span>DEMO</span>
+            </template>
+            <!-- 二级子菜单 -->
+            <el-menu-item index="1-4-1">
+              <!-- 二级菜单模板 -->
+              <template slot="title">
+                <!-- 图标 -->
+                <i class="el-icon-location"></i>
+                <!-- 文本 -->
+                <span>子菜单一</span>
+              </template>
+            </el-menu-item>
+          </el-submenu>
+        </el-menu>
+      </el-aside>
+      <el-main>Main
+        <h1>Demo</h1>
+      </el-main>
+    </el-container>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style lang="scss" scoped>
+  .home-container {
+    height: 100%;
 
-#nav {
-  padding: 30px;
+    & .el-aside {
+      background-color: #333744;
+    }
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+    & .el-main {
+      background-color: #eaedf1;
     }
   }
-}
 </style>
